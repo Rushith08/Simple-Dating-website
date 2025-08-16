@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> forgot password</title>
+   
+
+
+        <link rel="stylesheet" href="forgot.css">
+
+
+        
+    </head>
+    <body>
+        <section>
+
+
+
+         <h1> Forgot Your Password?</h1>
+         <br>
+        
+        <input type="text" id="username" placeholder="username" required  >
+        <br><br>
+        <button onclick="forgot()"> <b>send secret question</b> </button>
+        <p id="none"></p>
+        
+        <div id="sample" style="display: none;">
+            <input type="text" id="secret_answer">
+            <br><br>
+            <button onclick="recover()"><b>submit</b> </button>
+        </div>
+        <br>
+        <p id="rpassword"></p>
+        <a href="login.html"> back to login page</a>
+        </section>
+
+
+        <script>
+           
+            function forgot(){
+                uname=document.getElementById("username").value;
+                fetch("login.json")
+        .then(response=>response.json())
+        .then((data)=>{
+            let u=0;
+           let  p="";
+            for(user of data){
+                if(user.username==uname){
+                    u=2;
+                    p=user.secret_question;
+                }
+
+            }
+            if(u==2){
+                document.getElementById("none").innerHTML=p;
+                document.getElementById("sample").style.display="block";
+
+            }
+            else{
+                document.getElementById("none").innerHTML="invalid username";
+            }
+
+
+
+
+
+
+
+
+        })
+            
+        .catch((error)=>console.error("Error",error));
+    }
+        
+
+        
+            function recover(){
+                uname=document.getElementById("username").value;
+                sanswer=document.getElementById("secret_answer").value;
+                fetch("login.json")
+        .then(response=>response.json())
+        .then((data)=>{
+            let a=0;
+            let b="";
+            for(user of data){
+                if(user.username==uname){
+                    if(user.secret_answer==sanswer){
+                        a=2;
+                        b=user.password;
+
+                    }
+                }
+            }
+            if(a==2){
+                document.getElementById("rpassword").innerHTML="your password is "+b;
+            }
+            else{
+                document.getElementById("rpassword").innerHTML="incorrect answer"
+            }
+
+            
+
+
+
+
+
+
+
+
+        })
+            
+        .catch((error)=>console.error("Error",error));
+    }
+
+
+
+
+
+            
+        </script>
+
+
+
+
+
+
+
+    </body>
+</html>
