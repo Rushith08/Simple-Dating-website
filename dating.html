@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> dating page</title>
+        <script src="dating.js"></script>
+        <link rel="stylesheet" href="dating.css">
+    </head>
+    <body>
+        
+        <div id="form">
+        <label for="rollno">CVR Roll Number</label>
+        
+        <input type="text" id="rollno" required>
+        <br><br>
+        <label for="name">Name</label>
+        
+        <input type="text" id="name" required>
+        <br><br>
+        <label for="year">Year of Study</label>
+        
+        <input type="text" id="year" required>
+        <br><br>
+        <label for="age">Age</label>
+        
+        <input type="number" id="age" required>
+        <br><br>
+        
+         <label for="email">Email</label>
+         
+         <input type="text" id="email">
+         <br><br>
+        <label>Gender</label>
+        <br>
+        <input type="radio" value="Male" name="Gender">
+        <label>Male</label>
+        <input type="radio" value="Female" name="Gender">
+        <label >Female</label>
+        <input type="radio" value="Other" name="Gender">
+        <label>Other</label>
+        <br><br>
+        <label>Interests</label>
+        <br>
+        <input type="checkbox" value="Traveling" name="interests">
+        <label>Traveling</label>
+        <input type="checkbox" value="Sports" name="interests">
+        <label>Sports</label>
+        <input type="checkbox" value="Movies" name="interests">
+        <label>Movies</label>
+        <input type="checkbox" value="Music" name="interests">
+        <label>Music</label>
+        <br><br>
+        <input type="checkbox" value="Literature" name="interests">
+        <label>Literature</label>
+        <input type="checkbox" value="Technology" name="interests">
+        <label>Technology</label>
+        <input type="checkbox" value="Fashion" name="interests">
+        <label>Fashion</label>
+        <input type="checkbox" value="Art" name="interests">
+        <label>Art</label> 
+        <br><br>
+        <label>Hobbies</label>
+        <br>
+        
+<input type="checkbox" value="Reading" name="hobbies">
+<label>Reading</label>
+<input type="checkbox" value="Cooking" name="hobbies">
+<label>Cooking</label>
+<input type="checkbox" value="Coding" name="hobbies">
+<label>Coding</label>
+<input type="checkbox" value="Gardening" name="hobbies">
+<label>Gardening</label>
+<input type="checkbox" value="Painting" name="hobbies">
+<label>Painting</label>
+<br><br>
+<input type="checkbox" value="Watching YouTube/Instagram" name="hobbies">
+<label>Watching Youtube/Instagram</label>
+<input type="checkbox" value="Playing musical instruments" name="hobbies">
+<label>Playing musical Instruments</label>
+<input type="checkbox" value="Photography" name="hobbies">
+<label>Photography</label>
+
+         <br><br>
+
+        
+
+         <button onclick="match()" id="submit"> Submit</button>
+
+        </div>
+         
+         <button onclick='window.location.replace("login.html")' id="logout">Logout </button>
+
+         <button onclick= 'window.location.replace("scroll.html")'; id="scroll"> scroll through profiles </button>
+         
+         
+        
+        <section>
+        <img id="match_img" width="400">
+        <p id="match_details"  style="display: none;"></p>
+        <button onclick='window.location.replace("dating.html")' id="back" style="display: none;"> Go Back</button> 
+        </section>
+        <p id="none" style=" font-weight: bold; position: fixed; top: 87%; left: 30%;"> </p>
+       
+
+        
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
