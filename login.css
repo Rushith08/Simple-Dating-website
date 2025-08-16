@@ -1,0 +1,46 @@
+
+
+section{
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    text-align: center;
+    
+    border: 2px black;
+    background-color:transparent;
+    border: 1px solid;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 50x;
+    padding-bottom: 50px;
+}
+
+body{
+    background-color: whitesmoke;
+    background-image: url(pexels-george-dolgikh-551816-1303098.jpg);
+    background-size: cover;
+}
+
+
+#username,#password{
+     border: 1px solid;
+     background-color: whitesmoke;
+
+       width: 170px;
+       height: 25px;
+       
+}
+button{
+    background-color: dodgerblue;
+    width: 180px;
+    border-radius: 7px;
+    height: 25px;
+    border: none;
+
+
+
+}
+video{
+    position: absolute;
+    left: 15%;
+}
