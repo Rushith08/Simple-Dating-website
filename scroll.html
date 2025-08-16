@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="scroll.css">
+        
+    </head>
+    <body>
+        <h1 style="text-align: center;">PROFILES</h1>
+       
+
+        <button onclick="filter()" > Filter</button><br>
+        <button onclick="back()" id="goback"> Go Back </button>
+        <h2 id="emptyfilter" style="display: none; text-align: center;">Sorry,no profiles for given filter </h2>
+
+        <div id="filter" style="display: none; ">
+
+            <label>Gender</label>
+            <br>
+            <input type="checkbox" name="Gender" value="Male">
+            <label> male</label>
+            <input type="checkbox" name="Gender" value="Female">
+            <label> Female</label>
+            <input type="checkbox" name="Gender" value="Other">
+            <label> Other</label>
+            <br><br>
+            <label>Interests</label>
+            <br>
+            <input type="checkbox" value="Traveling" name="interests">
+            <label>Traveling</label>
+            <input type="checkbox" value="Sports" name="interests">
+            <label>Sports</label>
+            <input type="checkbox" value="Movies" name="interests">
+            <label>Movies</label>
+            <input type="checkbox" value="Music" name="interests">
+            <label>Music</label>
+            <br>
+            <input type="checkbox" value="Literature" name="interests">
+            <label>Literature</label>
+            <input type="checkbox" value="Technology" name="interests">
+            <label>Technology</label>
+            <input type="checkbox" value="Fashion" name="interests">
+            <label>Fashion</label>
+            <input type="checkbox" value="Art" name="interests">
+            <label>Art</label> 
+            <br><br>
+            
+        <label>Hobbies</label>
+        <br>
+        
+<input type="checkbox" value="Reading" name="hobbies">
+<label>Reading</label>
+<input type="checkbox" value="Cooking" name="hobbies">
+<label>Cooking</label>
+<input type="checkbox" value="Coding" name="hobbies">
+<label>Coding</label>
+<input type="checkbox" value="Gardening" name="hobbies">
+<label>Gardening</label>
+<input type="checkbox" value="Painting" name="hobbies">
+<label>Painting</label>
+<br>
+<input type="checkbox" value="Watching YouTube/Instagram" name="hobbies">
+<label>Watching Youtube/Instagram</label>
+<input type="checkbox" value="Playing musical instruments" name="hobbies">
+<label>Playing musical Instruments</label>
+<input type="checkbox" value="Photography" name="hobbies">
+<label>Photography</label>
+       <br><br>
+       <label>Year Of Study</label>
+       <br>
+       <input type="checkbox" value="1st" name="year">
+       <label>1st</label>
+       <input type="checkbox" value="2nd" name="year">
+       <label>2nd</label>
+       <input type="checkbox" value="3rd" name="year">
+       <label>3rd</label>
+       <input type="checkbox" value="4th" name="year">
+       <label>4th</label>
+
+
+        </div>
+       
+        <section id="gallery"></section>
+        <section id="filter gallery"></section>
+       
+
+        <script>
+            
+            
+    fetch("students.json")
+    .then(response=>response.json())
+    .then((data)=>{
+        for(user of data){
+            let img = document.createElement("img");
+            img.src=user.Photo;
+            img.style.width = "400px";
+            let p=document.createElement('p');
+            p.innerHTML= user.Name+"<br><br>"+"Roll no : "+user["CVR Roll Number"]+"<br>"+"Year of Study : "+user["Year of Study"]+"<br>"+"Age : "+user["Age"]+"<br>"+"Gender : "+user["Gender"]+"<br>"+"Interests : "+user["Interests"]+"<br>"+"Hobbies : "+user["Hobbies"]+"<br>"+"Email : "+user["Email"]; 
+            let gallery = document.getElementById("gallery");
+            let div=document.createElement("div");
+            div.appendChild(img);
+            div.appendChild(p);
+            gallery.appendChild(div);
+
+        
+            
+
+
+
+            
+        }
+
+
+    })
+
+
+        function filter(){
+
+            
+
+
+            if(document.getElementById("filter").style.display == 'none'){
+                document.getElementById("filter").style.display='block';
+            }
+            else{
+                document.getElementById("filter").style.display ="none";
+
+
+            }
+
+            
+        
+        
+
+
+            let Gender = document.getElementsByName("Gender");
+            let gender=[];
+    for(let i=0;i<Gender.length;i++){
+        if(Gender[i].checked){
+            gender.push(Gender[i].value);
+        }
+    }    
+
+
+    let Interests=document.getElementsByName("interests");
+    let interests=[];
+    for(let i=0;i<Interests.length;i++){
+        if(Interests[i].checked){
+            interests.push(Interests[i].value);
+        }
+    }
+
+
+    let Hobbies=document.getElementsByName("hobbies");
+    let hobbies=[];
+    for(let i=0;i<Hobbies.length;i++){
+        if(Hobbies[i].checked){
+            hobbies.push(Hobbies[i].value);
+        }
+    }
+
+    let Year=document.getElementsByName("year");
+    let year=[];
+    for(let i=0;i<Year.length;i++){
+        if(Year[i].checked){
+            year.push(Year[i].value);
+        }
+    }
+    
+
+
+
+    fetch("students.json")
+    .then(response=>response.json())
+    .then((data)=>{
+
+        if(document.getElementById("filter gallery").childElementCount !=0){
+            
+            document.getElementById("filter gallery").innerHTML="";
+            
+        }
+        for(user of data){
+            if(gender.length!=0 || interests.length!=0 || hobbies.length != 0 || year.length!=0 ){
+        
+         if( (gender.includes(user.Gender) || gender.length==0) && (year.includes(user["Year of Study"]) || year.length==0) && (interests.every(element => user.Interests.includes(element)) || interests.length==0) && (hobbies.every(element => user.Hobbies.includes(element)) || hobbies.length==0) ){
+            
+            let img = document.createElement("img");
+            img.src=user.Photo;
+            img.style.width = "400px";
+            let p=document.createElement('p');
+            p.innerHTML= user.Name+"<br><br>"+"Roll no : "+user["CVR Roll Number"]+"<br>"+"Year of Study : "+user["Year of Study"]+"<br>"+"Age : "+user["Age"]+"<br>"+"Gender : "+user["Gender"]+"<br>"+"Interests : "+user["Interests"]+"<br>"+"Hobbies : "+user["Hobbies"]+"<br>"+"Email : "+user["Email"]; 
+            let filter_gallery = document.getElementById("filter gallery");
+            let div=document.createElement("div");
+            div.appendChild(img);
+            div.appendChild(p);
+            filter_gallery.appendChild(div);
+
+            
+
+        }
+
+    }
+
+        
+            
+
+
+
+            
+        }
+        
+      if(document.getElementById("filter").style.display != "none" ){
+        document.getElementById("filter gallery").style.display="none";
+      }
+      else{
+        document.getElementById("filter gallery").style.display="block"
+      }
+      
+
+        if( document.getElementById("gallery").style.display=="none" && gender.length==0 && interests.length==0 && hobbies.length == 0 && year.length==0 ){
+    document.getElementById("gallery").style.display="block";
+    }
+
+    else{
+        document.getElementById("gallery").style.display="none";
+    }
+
+        if(document.getElementById("filter").style.display =="none" && document.getElementById("gallery").style.display=="none" && document.getElementById("filter gallery").childElementCount ==0){
+            document.getElementById("emptyfilter").style.display="block";
+        }
+        else{
+            document.getElementById("emptyfilter").style.display="none";
+        }
+
+
+        if(document.getElementById("filter").style.display !="none"){
+            document.getElementById("goback").style.display="none";
+        }
+        else{
+            document.getElementById("goback").style.display="block";
+        }
+
+
+    })
+
+
+
+
+
+    
+
+
+
+
+
+        
+      
+
+                
+             
+
+
+
+
+        
+    }
+
+
+    function back(){
+        window.location.replace("dating.html");
+    }
+
+
+
+
+
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
