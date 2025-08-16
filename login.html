@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <title>login page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+ 
+
+    <section>
+    <h1> Welcome </h1>
+    <h5>please enter your login details below</h5>
+    <br>
+    
+     
+        
+        <input type="text" id="username" placeholder="username"  required >
+        <br><br>
+        
+        <input type="password" id="password" placeholder="password" required>
+        <br><br>
+        <input type="checkbox" name="shpd" onchange="show()" value="shpwd">
+        <label> show password </label>
+        <br><br>
+        
+        <button onclick="login()" id="login">Log in</button>
+        <br><br>
+        
+
+        <a href="forgot.html" style="text-decoration: none;  "> forgot password?</a>
+
+    <p id="none"> </p>
+    </section>
+
+    
+    <script>
+        function login(){
+            let uname=document.getElementById("username").value;
+            let pword=document.getElementById("password").value;
+        
+            fetch("login.json")
+        .then(response=>response.json())
+        .then((data)=>{
+            let u=0;
+            let p=0;
+            
+            for(user of data){
+                if(user.username==uname){
+                    u=2;
+                    if(user.password==pword){
+                        p=2;
+                    }
+                }
+        
+            }
+            if(u == 2 && p == 2 ){
+
+             window.location.replace("dating.html");
+            }
+            else {
+                
+                
+                
+                document.getElementById("none").innerHTML="invalid username or password";
+                
+                
+            
+            }
+        
+        })
+        .catch((error)=>console.error("Error",error));
+       
+
+
+        }
+        function show(){
+            let shpd= document.getElementsByName("shpd");
+
+            if(shpd[0].checked){
+            document.getElementById("password").setAttribute("type","text");
+            }
+
+            else{
+                document.getElementById("password").setAttribute("type","password");
+            }
+        }
+       
+  
+
+    
+
+
+    </script>
+</body>
+</html>
