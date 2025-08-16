@@ -1,0 +1,27 @@
+
+section{
+    position: absolute;
+    top: 25%;
+    left: 54%;
+    text-align: center;
+    
+    
+    background-color: transparent;
+    
+    padding: 50px;
+}
+button{
+    background-color: dodgerblue;
+    width: 180px;
+    border-radius: 7px;
+    height: 25px;
+    border: none;
+
+}
+
+
+body{
+    background-image: url("forgot.jpeg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
