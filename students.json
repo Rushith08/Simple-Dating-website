@@ -1,0 +1,80 @@
+
+[
+    {
+        "CVR Roll Number": "21B81A0667",
+        "Name": "Aryan Sharma",
+        "Year of Study": "3rd",
+        "Age": 21,
+        "Gender": "Male",
+        "Interests": ["Traveling", "Music"],
+        "Hobbies": ["Reading", "Playing musical instruments"],
+        "Email": "aryan@gmail.com",
+        "Photo": "photos/aryan_sharma.png"
+    },
+    {
+        "CVR Roll Number": "22B81A0512",
+        "Name": "Aditi Singh",
+        "Year of Study": "2nd",
+        "Age": 20,
+        "Gender": "Female",
+        "Interests": ["Movies", "Art"],
+        "Hobbies": ["Cooking", "Painting"],
+        "Email": "aditi@gmail.com",
+        "Photo": "photos/aditi_singh.png"
+    },
+    {
+        "CVR Roll Number": "20B81A0558",
+        "Name": "Rahul Patel",
+        "Year of Study": "4th",
+        "Age": 22,
+        "Gender": "Male",
+        "Interests": ["Technology", "Sports"],
+        "Hobbies": ["Coding", "Watching YouTube/Instagram"],
+        "Email": "rahul@gmail.com",
+        "Photo": "photos/rahul_patel.png"
+    },
+    {
+        "CVR Roll Number": "23B81A0598",
+        "Name": "Sneha Desai",
+        "Year of Study": "1st",
+        "Age": 19,
+        "Gender": "Female",
+        "Interests": ["Literature", "Fashion"],
+        "Hobbies": ["Gardening", "Painting"],
+        "Email": "sneha@gmail.com",
+        "Photo": "photos/sneha_desai.png"
+    },
+    {
+        "CVR Roll Number": "21B81A0688",
+        "Name": "Rohan Gupta",
+        "Year of Study": "3rd",
+        "Age": 21,
+        "Gender": "Male",
+        "Interests": ["Movies", "Technology"],
+        "Hobbies": ["Playing musical instruments", "Watching YouTube/Instagram"],
+        "Email": "rohan@gmail.com",
+        "Photo": "photos/rohan_gupta.jpg"
+    },
+    {
+        "CVR Roll Number": "20B81A0544",
+        "Name": "Neha Reddy",
+        "Year of Study": "4th",
+        "Age": 22,
+        "Gender": "Female",
+        "Interests": ["Art", "Music"],
+        "Hobbies": ["Reading", "Painting"],
+        "Email": "neha@gmail.com",
+        "Photo": "photos/neha_reddy.png"
+    },
+    {
+        "CVR Roll Number": "22B81A0567",
+        "Name": "Vivek Kumar",
+        "Year of Study": "2nd",
+        "Age": 20,
+        "Gender": "Male",
+        "Interests": ["Sports", "Technology"],
+        "Hobbies": ["Coding", "Watching YouTube/Instagram"],
+        "Email": "vivek@gmail.com",
+        "Photo": "photos/vivek_kumar.jpg"
+    }
+]
