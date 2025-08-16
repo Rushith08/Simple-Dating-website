@@ -1,0 +1,32 @@
+div:not(#filter) {
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    transform: translateX(250px);
+    width: 100%;
+    
+    
+}
+div img{
+    border-radius: 10px;
+    margin: 15px;
+    
+}
+div p{
+    font-weight: bold;
+    font-size: large;
+
+}
+button{
+    display: block;
+    margin: auto;
+
+}
+#filter{
+    text-align: center;
+}
+
+body{
+    background-image: url(pexels-fwstudio-33348-129731.jpg);
+
+}
